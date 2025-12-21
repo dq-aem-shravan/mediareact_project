@@ -1,10 +1,13 @@
 import React from 'react'
 import Stack from './Components/Routing/Stack'
+import { AuthProvider } from './context/AuthContext'
 
 const App = () => {
   return (
     <div>
-      <Stack/>
+      <AuthProvider>
+        <Stack/>
+      </AuthProvider>
     </div>
   )
 }

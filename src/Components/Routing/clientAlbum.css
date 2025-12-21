@@ -146,3 +146,20 @@ h1 {
       margin: 10px;
   }
 }
+
+/* Add to both .css files */
+.upload-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: blue;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.upload-button:hover {
+  transform: scale(1.2);
+}
