@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getMediaUrl } from "../../api/mediaService";
+// import { getMediaUrl } from "../../api/mediaService";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,14 +50,17 @@ const WeddingStorySection = ({ section }) => {
       {/* Preview Images */}
       <div className="absolute inset-0">
         {section.images.map((img, index) =>{ 
-          console.log("Image in section:", img.id);
+
+          console.log("Image in section:", img.image, section.slug);
           return (
           <img
             key={index}
-            src={getMediaUrl(img.id)}
+            // src={getMediaUrl(img.id)}
+            src={`http://192.168.1.20:8080/uploads/users/${section.slug}/${img.image}`}
+            
             alt=""
             onClick={() =>
-              navigate(`/wedding-stories/${section.slug}`)
+              navigate(`/wedding/${section.slug}`)
             }
             className={`story-img absolute cursor-pointer rounded-lg shadow-xl transition-transform hover:scale-105
               ${index === 0 && "top-[20%] left-[10%] w-[300px]"}
@@ -75,7 +78,7 @@ const WeddingStorySection = ({ section }) => {
 
 export default WeddingStorySection;
 
-
+// `/wedding/${section.slug}`
 
 
 //preview of the section 

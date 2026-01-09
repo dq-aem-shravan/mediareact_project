@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../context/AuthContext";
 import { uploadMedia, getAllMedia, getMediaUrl } from '../api/mediaService';
+import Footer from "../Components/ui/Footer";
 
 const ClientAlbum = () => {
   const { isAdmin } = useContext(AuthContext);
@@ -89,43 +90,7 @@ const ClientAlbum = () => {
           ))}
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="bg-black text-gray-300 py-12 px-6 md:px-12 flex flex-wrap justify-between gap-8">
-        <div className="flex-1 min-w-[200px]">
-          <h3 className="text-red-600 font-semibold mb-2">About Us</h3>
-          <p>We are a creative team dedicated to capturing your moments with precision and artistry.</p>
-        </div>
-        <div className="flex-1 min-w-[200px]">
-          <h3 className="text-red-600 font-semibold mb-2">Quick Links</h3>
-          <ul className="space-y-1">
-            <li><a href="/" className="hover:text-red-600">Home</a></li>
-            <li><a href="/portfolio" className="hover:text-red-600">Portfolio</a></li>
-            <li><a href="/about" className="hover:text-red-600">About Us</a></li>
-            <li><a href="/contact" className="hover:text-red-600">Contact</a></li>
-          </ul>
-        </div>
-        <div className="flex-1 min-w-[200px]">
-          <h3 className="text-red-600 font-semibold mb-2">Contact Us</h3>
-          <p>Email: wedmakers.co@gmail.com</p>
-          <p>Phone: +91 7995112432</p>
-          <p>Address: Hyderabad, India</p>
-        </div>
-        <div className="flex-1 min-w-[200px]">
-          <h3 className="text-red-600 font-semibold mb-2">Follow Us</h3>
-          <div className="flex gap-4 text-2xl">
-            <a href="https://www.instagram.com/wedmakers.co" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
-              <FaInstagram />
-            </a>
-            <a href="https://youtube.com/@wedmakers" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
-              <FaYoutube />
-            </a>
-          </div>
-        </div>
-        <div className="w-full text-center mt-8 text-gray-400">
-          © 2025 WEDMAKER'S.CO All Rights Reserved.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

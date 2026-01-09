@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getWeddingStoryBySlug } from "../api/weddingStoryService";
-import { getMediaUrl } from "../api/mediaService";
+// import { getMediaUrl } from "../api/mediaService";
 
 const WeddingStoryDetail = () => {
   const { slug } = useParams();
   const [story, setStory] = useState(null);
+
 
   useEffect(() => {
     getWeddingStoryBySlug(slug).then(setStory);
@@ -27,7 +28,8 @@ const WeddingStoryDetail = () => {
         {story.images.map((img, index) => (
           <img
             key={index}
-            src={getMediaUrl(img.image)}
+            // src={getMediaUrl(img.image)}
+            src={`http://192.168.1.20:8080/uploads/users/${story.slug}/${img.image}`}
             alt=""
             className="mb-4 rounded-lg cursor-pointer"
           />
